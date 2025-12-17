@@ -1,0 +1,92 @@
+Build a full-stack Agentic AI web application for Healthcare Payers called
+“Provider Data Validation & Directory Management Agent”.
+
+BUSINESS CONTEXT:
+Healthcare provider directories contain 40–80% inaccurate data such as phone numbers,
+addresses, specialties, and license details. Manual verification is slow, costly, and
+causes poor member experience and regulatory risk.
+
+GOAL:
+Automate provider data validation and enrichment using publicly available data
+sources and AI agents. The system should validate, enrich, score, and manage provider
+directory data with minimal human effort.
+
+CORE FEATURES:
+1. Upload provider data (CSV) and scanned PDFs (unstructured).
+2. Automatically extract provider details from PDFs using OCR / VLM.
+3. Validate provider contact information (phone, address, specialty).
+4. Cross-check provider identity and credentials using public NPI Registry API.
+5. Perform basic web scraping of provider websites (mock URLs allowed).
+6. Compare information across multiple sources and detect inconsistencies.
+7. Generate confidence scores per data field (phone, address, license, specialty).
+8. Flag low-confidence providers for manual review.
+9. Auto-generate email drafts requesting provider confirmation.
+10. Update provider directory records and generate validation reports.
+
+AGENT ARCHITECTURE:
+Create loosely coupled AI agents with clear responsibilities.
+
+Agent 1 – Data Validation Agent:
+- Validates phone numbers and addresses.
+- Scrapes provider websites and Google Maps listings (mock allowed).
+- Cross-checks provider data using NPI Registry API.
+- Outputs validated fields with source attribution.
+
+Agent 2 – Information Enrichment Agent:
+- Extracts missing provider details from PDFs and websites.
+- Adds education, certifications, specialties if available.
+- Normalizes and standardizes provider profiles.
+
+Agent 3 – Quality Assurance Agent:
+- Compares data from multiple sources.
+- Detects inconsistencies and potential fraud.
+- Generates confidence scores using weighted logic.
+- Flags providers needing human review.
+
+Agent 4 – Directory Management Agent:
+- Updates provider directory records.
+- Creates prioritized queues for manual verification.
+- Generates summary reports and dashboards.
+- Drafts communication emails for providers.
+
+USER INTERFACE REQUIREMENTS:
+- Dashboard showing total providers processed.
+- Verified vs flagged providers.
+- Confidence score visualization.
+- Provider profile view with source comparison.
+- Downloadable validation report (CSV/PDF).
+- Manual review queue with priority levels.
+
+TECH STACK:
+- Frontend: React (simple, clean UI).
+- Backend: Python with FastAPI.
+- Database: SQLite.
+- OCR: Tesseract or Vision-Language Model.
+- AI/NLP: OpenAI or HuggingFace models.
+- Data processing: Pandas, NumPy.
+- Visualization: Charts for KPIs and quality metrics.
+
+DATA:
+- Use synthetic provider data (200 records).
+- Introduce realistic data quality issues (wrong phone, outdated address).
+- Use public data sources where possible; mock where necessary.
+
+KPIs TO DISPLAY:
+- Validation accuracy percentage.
+- Processing time (target < 30 minutes for 200 providers).
+- PDF extraction accuracy.
+- Number of providers requiring manual review.
+
+GUARDRAILS:
+- Mask any sensitive PII.
+- Show confidence scores before allowing updates.
+- Human-in-the-loop for low confidence data.
+
+OUTPUT:
+- Fully working web application.
+- Clear agent orchestration.
+- Sample synthetic dataset.
+- Demo-ready dashboard.
+- Clean, readable code.
+
+Build this project end-to-end and make it suitable for a hackathon .
