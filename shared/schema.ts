@@ -5,7 +5,7 @@ import { z } from "zod";
 // Provider status enum
 export const ProviderStatus = {
   PENDING: "pending",
-  VERIFIED: "verified",
+  // VERIFIED: "verified",
   FLAGGED: "flagged",
   ERROR: "error",
 } as const;
