@@ -5,6 +5,8 @@ MediveriAI is a full-stack Agentic AI web application for Healthcare Payers that
 ## Screenshots
 ![alt text](image.png)
 
+![alt text](image-1.png)
+
 ## Business Context
 Healthcare provider directories contain 40-80% inaccurate data such as phone numbers, addresses, specialties, and license details. Manual verification is slow, costly, and causes poor member experience and regulatory risk.
 
